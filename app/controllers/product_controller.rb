@@ -2,7 +2,7 @@ class ProductController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
-    @produtcts = Procut.all
+    @products = Procut.all
   end
 
   def show
@@ -42,6 +42,6 @@ class ProductController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :color, :storage, :price, :description, :user_id)
+    params.require(:product).permit(:name, :ingredient, :storage, :price, :description, :user_id)
   end
 end

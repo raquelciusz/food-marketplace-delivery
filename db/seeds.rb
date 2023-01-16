@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Product.destroy_all
+
+
+50.times do
+  product = Product.create!(
+    name: Faker::Food.dish,
+    price: "R$ #{rand(20..50)},00",
+    description: Faker::Food.description,
+    storage: rand(1..30),
+    ingredient: Faker::Food.ingredient,
+    user_id: 1
+  )
+end
