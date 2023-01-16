@@ -3,6 +3,7 @@
     <% @products.each do |product| %>
       <div class="card-product rounded">
         <img src="https://source.unsplash.com/random/200x200?sig=incrementingIdentifier">
+        <%= link_to product_path(product), class:"hover:text-primary" do %>
         <div class="card-product-infos">
           <div class="d-flex flex-row justify-content-between align-items-center">
             <h2><%= product.name %></h2>
@@ -12,6 +13,7 @@
           <p><%= product.description %></p>
           <p>Ingredient: <%= product.ingredient %></p>
         </div>
+        <% end %>
       </div>
     <% end %>
   </div>

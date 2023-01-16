@@ -30,6 +30,19 @@
   margin-left: 1px;
 }
 
+.card-product:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.card-product a {
+  text-decoration: none;
+  color: black;
+}
+
+.card-product a:hover {
+  background-color: #C6AD94;
+}
+
 .card-product img {
   height: 100%;
   width: 120px;
@@ -37,7 +50,7 @@
 }
 
 .card-product-infos {
-  height: 180px;
+  height: 200px;
 }
 
 .card-product h2 {
