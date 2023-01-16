@@ -2,7 +2,7 @@ class ProductController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
-    @products = Procut.all
+    @products = Product.all
   end
 
   def show

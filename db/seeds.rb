@@ -12,7 +12,7 @@ Product.destroy_all
 50.times do
   product = Product.create!(
     name: Faker::Food.dish,
-    price: "R$ #{rand(20..50)},00",
+    price: rand(20..50),
     description: Faker::Food.description,
     storage: rand(1..30),
     ingredient: Faker::Food.ingredient,
