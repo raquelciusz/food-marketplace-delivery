@@ -1,6 +1,6 @@
 <div class="container">
   <div class="d-flex m-5">
-    <img src="/images/food01.png" alt="image food" />
+    <%= image_tag("food01.png", :alt => "food image") %>
     <div class="mx-5">
       <h2><%= @product.name %></h2>
       <h3>R$<%= @product.price %>,00</h3>

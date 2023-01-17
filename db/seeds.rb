@@ -11,7 +11,8 @@ Product.destroy_all
 
 sleep(2)
 
-puts "creating 50 products.."
+User.create!(first_name: "Raquel", last_name: "Ciusz", email: "raquel@teste.com", password: 123456, admin: true)
+
 50.times do
   product = Product.create!(
     name: Faker::Food.dish,
@@ -21,4 +22,5 @@ puts "creating 50 products.."
     ingredient: Faker::Food.ingredient,
     user_id: 1
   )
+  puts "Creating #{product.count} product..."
 end
