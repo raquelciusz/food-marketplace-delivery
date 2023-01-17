@@ -1,9 +1,11 @@
 <div class="container">
   <div class="d-flex m-5">
-    <% if @product.photo.attached? %>
-      <%= image_tag @product.photo %>
+    <% if @product.photos.attached? %>
+    <% @product.photos.each_with_index do |photo, index| %>
+      <%= cl_image_tag photo.key, class: "d-block w-70", style: 'width:100%; height:100%;', crop: :fill %>
+    <% end %>
     <% else %>
-      <%= image_tag "https://source.unsplash.com/random/200x200?sig=incrementingIdentifier"%>
+      <%= image_tag 'https://source.unsplash.com/random/200x200?sig=incrementingIdentifier', class: "d-block w-70", height: 300, width: 400, crop: :fill %>
     <% end %>
     <div class="mx-5">
       <h2><%= @product.name %></h2>
