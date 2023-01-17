@@ -6,9 +6,12 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+puts "Cleaning database.."
 Product.destroy_all
 
+sleep(2)
 
+puts "creating 50 products.."
 50.times do
   product = Product.create!(
     name: Faker::Food.dish,

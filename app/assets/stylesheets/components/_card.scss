@@ -12,7 +12,7 @@
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+@media (min-width: 990px) {
   .cards {
     grid-template-columns: 1fr 1fr;
   }
@@ -31,7 +31,7 @@
 }
 
 .card-product:hover {
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
 .card-product a {
@@ -40,7 +40,7 @@
 }
 
 .card-product a:hover {
-  background-color: #C6AD94;
+  background-color: $khaki;
 }
 
 .card-product img {
