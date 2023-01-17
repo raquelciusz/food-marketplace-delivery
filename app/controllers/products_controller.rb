@@ -19,9 +19,15 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = Product.create(product_params)
     @product.user = current_user
     authorize @product
+    # current_user
+    if @product.save
+      redirect_to product_path(@product)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -34,7 +40,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to products_path, notice: "Product updated with success!"
+      redirect_to product_path(@product), notice: "Product updated with success!"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -47,6 +53,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:id, :name, :ingredient, :storage, :price, :description, :user_id, :photos)
+    params.require(:product).permit(:id, :name, :ingredient, :storage, :price, :description, :user_id, :photo)
   end
 end

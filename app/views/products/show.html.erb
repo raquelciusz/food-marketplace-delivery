@@ -1,7 +1,10 @@
 <div class="container">
   <div class="d-flex m-5">
-    <img src="https://source.unsplash.com/random/200x200?sig=incrementingIdentifier">
-    <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
+    <% if @product.photo.attached? %>
+      <%= image_tag @product.photo %>
+    <% else %>
+      <%= image_tag "https://source.unsplash.com/random/200x200?sig=incrementingIdentifier"%>
+    <% end %>
     <div class="mx-5">
       <h2><%= @product.name %></h2>
       <h3>R$<%= @product.price %>,00</h3>
