@@ -1,4 +1,4 @@
-class ProductController < ApplicationController
+class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
@@ -10,13 +10,11 @@ class ProductController < ApplicationController
 
   def new
     @product = Product.new
-    authorize @product
   end
 
   def create
     @product = Product.new(product_params)
     @product.user = current_user
-    authorize @product
   end
 
   def destroy
@@ -38,7 +36,6 @@ class ProductController < ApplicationController
   private
   def set_product
     @product = Product.find(params[:id])
-    authorize @product
   end
 
   def product_params

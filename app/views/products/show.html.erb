@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="d-flex m-5">
+    <img src="https://source.unsplash.com/random/200x200?sig=incrementingIdentifier">
+    <div class="mx-5">
+      <h2><%= @product.name %></h2>
+      <h3>R$<%= @product.price %>,00</h3>
+      <p>Ingredient: <%= @product.ingredient %></p>
+      <p>Quantity: <%= @product.storage %></p>
+    </div>
+  </div>
+
+  <div>
+    <p><%= @product.description %></p>
+  </div>
+
+  <%# <% if policy(@car).edit? %>
+  <%# <%= link_to "Edit", edit_car_path(@car), class:"btn btn-secondary hover:text-secondary rounded-pill shadow-sm border m-1 px-5" %>
+  <%# <% end %>
+  <%# <%= button_to "Delete", @car, class:"btn btn-danger hover:text-danger rounded-pill shadow-sm border m-1 px-4", method: :delete if policy(@car).destroy? %>
+</div>

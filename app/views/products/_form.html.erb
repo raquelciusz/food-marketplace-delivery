@@ -1,0 +1,23 @@
+<div class="container">
+
+  <%= simple_form_for(@product) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="d-flex justify-content-around mt-5 mb-5" id="form-bg">
+      <div>
+        <%= f.input :name, placeholder: 'name' %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.input :price, placeholder: 'price' %>
+        <%= f.input :description, placeholder: 'description' %>
+      </div>
+      <div>
+        <%= f.input :storage, placeholder: 'storage' %>
+        <%= f.input :ingredient, placeholder: 'ingredient' %>
+        <%= f.submit class: 'btn btn-primary hover:text-primary rounded-pill shadow-sm border px-4' %>
+
+        <%=link_to "Back to Home", "/", class: 'btn btn-primary hover:text-primary rounded-pill shadow-sm border px-4'%>
+      </div>
+    </div>
+  <% end %>
+</div>
