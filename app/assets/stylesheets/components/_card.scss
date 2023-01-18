@@ -40,7 +40,7 @@
 }
 
 .card-product a:hover {
-  background-color: $khaki;
+  background-color: rgba(var($khaki), 0.8);
 }
 
 .card-product img {
