@@ -28,7 +28,7 @@
       </div>
 
       <!--Avatar Upload Field-->
-      <div class="col-6">
+      <div>
         <label class="btn avatar-photo mt-4">
           <% if current_user.avatar.attached? %>
             <%= cl_image_tag current_user.avatar.key %>
